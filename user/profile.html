@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/styles.css">
+    <title>CityBucket</title>
+  </head>
+  <body>
+    <div class="Title">
+      <h1>City Bucket</h1>
+      <h2 id="ProfileName"></h2>
+    </div>
+    <div class="Main">
+      <p id="Profession"></p>
+    </div>
+    <script type="text/javascript">
+      // fetch data from local storage with _cb_user key
+      let user = localStorage.getItem("_cb_user");
+
+      // convert data to a usable JSON object
+      user = JSON.parse(user);
+
+      // attach data to DOM
+      const nameNode = document.getElementById("ProfileName");
+      nameNode.innerHTML = user.name;
+
+      const professionNode = document.getElementById("Profession");
+      professionNode.innerHTML = "Title: " + user.jobTitle;
+    </script>
+  </body>
+</html>
